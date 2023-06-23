@@ -8,12 +8,12 @@ function print2largest(arr, arr_size) {
     }
 
     // sort the array
-    arr.sort();
+   let newArr = arr.sort((a,b) => a-b);
     // start from second last element as the largest element is at last
     for (let i = arr_size - 2; i >= 0; i--) {
         // if the element is not equal to largest element
-        if (arr[i] != arr[arr_size - 1]) {
-            console.log("The second largest element is " + arr[i]);
+        if (newArr[i] != newArr[arr_size - 1]) {
+            console.log("The second largest element is " + newArr[i]);
             return;
         }
     }

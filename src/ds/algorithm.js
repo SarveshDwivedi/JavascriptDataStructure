@@ -14,11 +14,9 @@ for (let i = 0; i < arr.length; i++) {
     s1[clr] = (s1[clr] || 0) + 1
 }
 
-console.log('s1==>', s1);
 let index = 1;
 for (let ele in s1) {
-    console.log('ele==>', ele);
-    console.log('s1[ele]==>', s1[ele]);
+    
     var newElement = document.createElement('div');
     newElement.id = "clr" + index;
     newElement.className = "clrDiv";

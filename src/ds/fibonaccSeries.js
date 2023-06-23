@@ -24,16 +24,4 @@ var fibonacciFN = {
 console.log(fibonacciFN.fibonacci(9))
 
 
-//Check if a given string is as Palindrome
-// JavaScript program to check number/string Palindrome using array method ?
-// Palindrome = same forward and backward
-// Ex. dad, madam, 12321, 454
-function isPalindrome(str) {
-    let reverse = str.split("").reverse().join("");
-    if (str.toLowerCase() === reverse.toLowerCase()) {
-        return `${str} : is Palindrome`;
-    } else {
-        return `${str} : is not Palindrome`;
-    }
-}
-console.log(isPalindrome("level"));
+

@@ -18,7 +18,7 @@ function reArrangementCharacters(str1, str2) {
     return result;
 }
 
-const reArrangementString = reArrangementCharacters('cat1', 'act');
+const reArrangementString = reArrangementCharacters('cat', 'act');
 console.log(reArrangementString);
 
 //abnormal or Anagram order of string
