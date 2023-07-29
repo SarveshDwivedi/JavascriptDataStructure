@@ -1,3 +1,12 @@
+//Type of way to create object
+//1-Using an Object Literal
+const person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+//2 - Using the JavaScript Keyword new
+const person1 = new Object();
+person.firstName = "Sarvesh";
+person.lastName = "Dwivedi";
+
+
 const object1 = {
     a: 'somestring',
     b: 42

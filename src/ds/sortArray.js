@@ -65,6 +65,24 @@ function selectionSort(arr) {
     return arr
 }
 
+function sortArray(unArr) {
+    console.log("Before sort==>", unArr)
+    for (let i = 0; i < unArr.length - 1; i++) {
+        let minIndex = i;
+        for (let j = i + i; j < unArr.length; j++) {
+            if (unArr[j] < unArr[minIndex]) {
+                minIndex = j;
+            }
+            let temp = unArr[minIndex];
+            unArr[minIndex] = unArr[i]
+            unArr[i] = temp;
+        }
+    }
+    console.log("After sort==>", unArr)
+    return unArr;
+}
+
+
 console.log("Before sorting: ", arr)
 console.log("After sorting: ", selectionSort(arr))
 
@@ -78,3 +96,36 @@ let sorted = arr.sort(function (a1, a2) {
     }
 })
 console.log(sorted);
+
+// 1- First remove duplication element and make Unique Array
+// 2- Second sort array element from unique array
+// 3- arrange arrat element in descending order 
+const unSortedArr = [2, 4, 3, 5, 9, 7, 5, 6, 23, 12];
+let uniqueArr = [... new Set(unSortedArr)];
+//console.log(uniqueArr);
+
+//let sortedArr = uniqueArr.sort((a,b) => a-b)
+let sortedArr = sortArray(uniqueArr);
+//console.log(sortedArr)
+
+let reverseArr = sortedArr.reverse()
+console.log(reverseArr)
+
+function sortArray(unArr) {
+    console.log("Before sort==>", unArr)
+    for (let i = 0; i < unArr.length; i++) {
+        let minIndex = i;
+        for (let j = i + i; j < unArr.length; j++) {
+            if (unArr[j] < unArr[minIndex]) {
+                minIndex = j;
+            }
+        }
+
+        let temp = unArr[minIndex];
+        unArr[minIndex] = unArr[i]
+        unArr[i] = temp;
+    }
+    console.log("After sort==>", unArr)
+    return unArr;
+}
+

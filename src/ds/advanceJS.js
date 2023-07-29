@@ -1,3 +1,4 @@
+
 //Infinite Currying in JavaScript
 
 function add(a) {
@@ -18,6 +19,22 @@ function init() {
     displayName();
 }
 init();
+
+
+//Closure hold the previous value and return the new value with addition 
+function a() {
+    let x = 0;
+    return function b(y) {
+        x = x + y;
+        return x;
+    };
+}
+
+let c = a();
+let d = c(3);
+let e = c(6);
+
+///////////////
 
 //Callback function
 function myDisplayer(some) {

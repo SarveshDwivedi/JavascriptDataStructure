@@ -51,6 +51,9 @@ Array.prototype.myReduce = function (cb, initial) {
 
 console.log(numbers.myReduce(callBack, 0));
 
+const expenses = [1800, 2000, 3000, 5000, 500];
+const salary = 15000;
+
 
 //Bind Pollyfill
 function getName() {
