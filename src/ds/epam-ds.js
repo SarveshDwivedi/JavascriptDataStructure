@@ -4,22 +4,22 @@
  * @param str
  **/
 function magicLatin(str) {
-    const wordsArray = str.split(' ');
-    const newWordsArray = [];
-    
-    wordsArray.forEach((word) => {
-      console.log()
-       let newWord = word + word.charAt(0) + 'ay';
-        newWord = newWord.substring(1);
-      
-      newWordsArray.push(newWord);
-    });
-  
-    console.log(newWordsArray.join(' '));
-  }
-  
-  magicLatin('Magic latin is cool'); // agicMay atinlay siay oolcay
-  magicLatin('Hello world !');   // elloHay orldWay !
+  const wordsArray = str.split(' ');
+  const newWordsArray = [];
+
+  wordsArray.forEach((word) => {
+    console.log()
+    let newWord = word + word.charAt(0) + 'ay';
+    newWord = newWord.substring(1);
+
+    newWordsArray.push(newWord);
+  });
+
+  console.log(newWordsArray.join(' '));
+}
+
+magicLatin('Magic latin is cool'); // agicMay atinlay siay oolcay
+magicLatin('Hello world !');   // elloHay orldWay !
 
 /**
  * Task 2 - Valid Parentheses
@@ -35,26 +35,26 @@ function magicLatin(str) {
 // Open brackets must be closed in the correct order.
 // Every close bracket has a corresponding open bracket of the same type.
 
-var isValid = function(s) {   
-    const stack = [];
-    
-    for (let i = 0 ; i < s.length ; i++) {
-        let c = s.charAt(i);
-        switch(c) {
-            case '(': stack.push(')');
-                break;
-            case '[': stack.push(']');
-                break;
-            case '{': stack.push('}');
-                break;
-            default:
-                if (c !== stack.pop()) {
-                    return false;
-                }
+var isValid = function (s) {
+  const stack = [];
+
+  for (let i = 0; i < s.length; i++) {
+    let c = s.charAt(i);
+    switch (c) {
+      case '(': stack.push(')');
+        break;
+      case '[': stack.push(']');
+        break;
+      case '{': stack.push('}');
+        break;
+      default:
+        if (c !== stack.pop()) {
+          return false;
         }
     }
-    
-    return stack.length === 0;
+  }
+
+  return stack.length === 0;
 };
 
 console.log(isValid("{}("))

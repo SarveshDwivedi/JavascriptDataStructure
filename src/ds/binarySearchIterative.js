@@ -18,36 +18,37 @@
 // location of x in given array arr[l..r] is present,
 // otherwise -1
 
-function binarySearch(arr, x)
-{
-	let l = 0;
-	let r = arr.length - 1;
-	let mid;
-	while (r >= l) {
-		mid = l + Math.floor((r - l) / 2);
-		// If the element is present at the middle itself
-		if (arr[mid] == x)
-			return mid;
-
-		// If element is smaller than mid, then  it can only be present in left subarray
-		if (arr[mid] > x)
-			r = mid - 1;
-			
-		// Else the element can only be present in right subarray
-		else
-			l = mid + 1;
+// Binary Search is implemented using an iterative function.
+let iterativeFunction = function (sorted_arr, target) {
+	let start = 0,
+	   end = sorted_arr.length - 1;
+ 
+	// Iterate as long as the beginning does not encounter the end.
+	while (start <= end) {
+	   // find out the middle index
+	   let mid = Math.floor((start + end) / 2);
+ 
+	   // Return True if the element is present in the middle.
+	   if (sorted_arr[mid] == target) return true;
+	   // Otherwise, look in the left or right half
+	   else if (sorted_arr[mid] < target) start = mid + 1;
+	   else end = mid - 1;
 	}
-
-	// We reach here when element is not present in array
-	return -1;
-}
-
-	arr =new Array(2, 3, 4, 10, 40);
-	x = 10;
-	n = arr.length;
-	result = binarySearch(arr, x);
-	
-(result == -1) ? console.log("Element is not present in array")
-			: console.log ("Element is present at index " + result);
-				
-
+ 
+	return false;
+ };
+ 
+ // Driver code
+ let sorted_arr = [2, 6, 8, 10, 12, 14];
+ let target = 9;
+ 
+ if (iterativeFunction(sorted_arr, target, 0, sorted_arr.length - 1))
+	document.write("Target found!<br>");
+ else document.write("Target not found!<br>");
+ 
+ target = 10;
+ 
+ if (iterativeFunction(sorted_arr, target, 0, sorted_arr.length - 1))
+	document.write("Target found!<br>");
+ else document.write("Target not found!<br>");
+ 

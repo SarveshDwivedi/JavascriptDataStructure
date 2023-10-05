@@ -64,3 +64,24 @@ function getEleCount1(arrDuplicate) {
     console.log(count);
 }
 getEleCount1(arrDuplicate);
+
+// remove duplicates from an array of objects using JavaScript
+const books = [
+  { title: "C++", author: "Bjarne" },
+  { title: "Java", author: "James" },
+  { title: "Python", author: "Guido" },
+  { title: "Java", author: "James" },
+];
+
+const unique = books.filter((obj, index) => {
+  return index === books.findIndex(o => obj.title === o.title);
+});
+
+console.log(unique);
+
+
+const ids = books.map(({ title }) => title);
+const filtered = books.filter(({ title }, index) =>
+    !ids.includes(title, index + 1));
+ 
+console.log(filtered);

@@ -2,12 +2,11 @@ const arr = [1800, 2000, 3000, 5000, 500];
  
 
 //Array Reduce
-let initial = 0;
-const sumWithInitial = arr.reduce((acc, current) => acc+current, initial );
+const sumWithInitial = arr.reduce((acc, current) => acc+current);
 console.log(sumWithInitial);
 
 //Array Filter
-const arrFilter =  arr.filter((ele, arr) => ele > 1800);
+const arrFilter =  arr.filter((ele, i, arr) => ele > 1800);
 console.log(arrFilter)
 
 //Array Map
